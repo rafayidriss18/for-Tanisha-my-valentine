@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>for tanisha ❤️</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ffd6e8, #f3e8ff, #fff5f5, #fffacd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 500px;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #e75480;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c7436a;
+}
+
+#mainContent {
+    display: none;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="login">
+    <h2>enter the date our story began 💕</h2>
+    <p>hint its the day we first met</p>
+    <input type="text" id="password" placeholder="8th october 2023">
+    <br>
+    <button onclick="checkPassword()">enter</button>
+    <p id="message"></p>
+</div>
+
+<div id="mainContent">
+    <h1>for tanisha 💗</h1>
+    <p>you unlocked my heart the day we met</p>
+</div>
+
+<script>
+function checkPassword() {
+    var input = document.getElementById("password").value.toLowerCase();
+    if(input === "8th october 2023") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+        document.body.style.display = "block";
+        document.body.style.height = "auto";
+    } else {
+        document.getElementById("message").innerText = "wrong password my dramatic girl try again 💗";
+    }
+}
+</script>
+
+</body>
+</html>
