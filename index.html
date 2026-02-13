@@ -10,7 +10,7 @@ body {
     text-align: center;
     height: 100vh;
     overflow: hidden;
-    display: none; /* hide everything until password */
+    display: none; /* hide until password */
 }
 
 #login, #mainContent {
@@ -19,7 +19,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
 }
 
 .container {
@@ -122,43 +122,29 @@ section {
 
 <section style="padding:80px 20px;">
     <h2>letters for every emotion 💌</h2>
-    <p>choose how you feel and let me love you through it</p>
+    <p>click your feeling to see a full love letter for you</p>
 
-    <button onclick="showLetter('sad')">if you feel sad</button>
-    <button onclick="showLetter('happy')">if you feel happy</button>
-    <button onclick="showLetter('hug')">if you want a hug</button>
+    <!-- links to first batch of letters -->
+    <button onclick="window.location.href='letters1.html#sad'">if you feel sad</button>
+    <button onclick="window.location.href='letters1.html#happy'">if you feel happy</button>
+    <button onclick="window.location.href='letters1.html#hug'">if you want a hug</button>
+    <button onclick="window.location.href='letters1.html#missing'">if you are missing me</button>
+    <button onclick="window.location.href='letters1.html#angry'">if you feel angry</button>
 
-    <div id="letterBox" style="margin-top:40px; max-width:700px; margin-left:auto; margin-right:auto; font-size:18px; line-height:1.6;"></div>
+    <!-- in future, add more buttons linking to letters2.html, letters3.html -->
 </section>
 
 </div>
 
 <script>
-document.body.style.display = 'block'; // show page only after load
-
 function checkPassword() {
     var input = document.getElementById("password").value.toLowerCase();
     if(input === "8th october 2023") {
         document.getElementById("login").style.display = "none";
         document.getElementById("mainContent").style.display = "block";
+        document.body.style.display = "block";
     } else {
         document.getElementById("message").innerText = "wrong password my dramatic girl try again 💗";
-    }
-}
-
-function showLetter(type) {
-    var box = document.getElementById("letterBox");
-
-    if(type === "sad") {
-        box.innerText = "i know there are days when your heart feels heavier than it should and i wish i could hold you and remind you that even on your lowest days you are deeply loved by me and nothing will ever change that";
-    }
-
-    if(type === "happy") {
-        box.innerText = "when you are happy the world feels brighter and your smile becomes my favorite sight and i fall in love with you all over again every single time";
-    }
-
-    if(type === "hug") {
-        box.innerText = "come here in your mind and let me wrap my arms around you and hold you close and remind you that you are safe wanted cherished completely";
     }
 }
 </script>
