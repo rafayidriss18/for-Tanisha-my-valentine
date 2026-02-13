@@ -8,38 +8,60 @@ body {
     font-family: 'Georgia', serif;
     background: linear-gradient(135deg, #ffd6e8, #f3e8ff, #fff5f5, #fffacd, #ffe4e1);
     text-align: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #login, #mainContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
     max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
     border-radius: 20px;
-    background: rgba(255,255,255,0.85);
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 input {
     padding: 10px;
     width: 80%;
-    margin-top: 15px;
     border-radius: 10px;
     border: 1px solid #ccc;
+    margin-top: 15px;
 }
 
 button {
-    margin: 10px;
+    margin-top: 15px;
     padding: 10px 20px;
-    border: none;
     border-radius: 20px;
-    background: #e75480;
+    border: none;
+    background-color: #e75480;
     color: white;
     cursor: pointer;
+    margin: 5px;
 }
 
-button:hover { background: #c7436a; }
+button:hover {
+    background-color: #c7436a;
+}
 
-#mainContent { display: none; }
+#mainContent {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    padding: 40px;
+    text-align: center;
+}
+
+section {
+    padding: 60px 20px;
+}
 
 #letterBox {
     margin-top: 40px;
@@ -54,7 +76,7 @@ button:hover { background: #c7436a; }
 </head>
 <body>
 
-<div id="login">
+<div class="container" id="login">
     <h2>enter the date our story began 💕</h2>
     <p>hint its the day we first met</p>
     <input type="text" id="password" placeholder="8th october 2023">
@@ -64,15 +86,76 @@ button:hover { background: #c7436a; }
 </div>
 
 <div id="mainContent">
-    <h1>for tanisha 💗</h1>
-    <p>from the moment we stood under the night sky above the city lights and shared our first kiss i knew you were not just a moment you were a forever kind of feeling</p>
 
+<section style="padding:60px 20px;">
+    <h1 style="font-size:40px;">for tanisha 💗</h1>
+    <p style="font-size:20px; max-width:700px; margin:auto;">
+        from the moment we stood under the night sky above the city lights 
+        and shared our first kiss i knew you were not just a moment 
+        you were a forever kind of feeling
+    </p>
+</section>
+
+<section style="padding:60px 20px; background:#fff0f6;">
+    <h2>our beginning 🌙</h2>
+    <p style="max-width:700px; margin:auto;">
+        8th october 2023 was not just a date 
+        it was the day my life quietly shifted into something softer 
+        something warmer 
+        something that had your name written all over it
+    </p>
+</section>
+
+<section style="padding:60px 20px;">
+    <h2>the promise 💍</h2>
+    <p style="max-width:700px; margin:auto;">
+        the day i surprised you and placed that promise ring on your finger 
+        i was not just giving you jewelry 
+        i was giving you intention 
+        loyalty 
+        and a future i see only with you
+    </p>
+</section>
+
+<section style="padding:60px 20px; background:#f3e8ff;">
+    <h2>why i love you 💕</h2>
+    <p style="max-width:700px; margin:auto;">
+        i love your softness 
+        your clingy energy 
+        your dramatic little moments 
+        the way you tease me and pretend you are calm 
+        when inside you feel everything so deeply
+    </p>
+</section>
+
+<section style="padding:80px 20px;">
     <h2>letters for every emotion 💌</h2>
+    <p>choose how you feel and let me love you through it</p>
+
     <button onclick="showLetter('sad')">if you feel sad</button>
     <button onclick="showLetter('happy')">if you feel happy</button>
     <button onclick="showLetter('hug')">if you want a hug</button>
+    <button onclick="showLetter('missing')">if you miss me</button>
+    <button onclick="showLetter('angry')">if you are angry</button>
+    <button onclick="showLetter('dramatic')">if you feel dramatic</button>
+    <button onclick="showLetter('overthinking')">if you are overthinking</button>
+    <button onclick="showLetter('clingy')">if you are feeling clingy</button>
+    <button onclick="showLetter('calm')">if you feel calm</button>
+    <button onclick="showLetter('teasing')">if you want to tease me</button>
+    <button onclick="showLetter('insecure')">if you feel insecure</button>
+    <button onclick="showLetter('jealous')">if you feel jealous</button>
+    <button onclick="showLetter('proud')">if you feel proud</button>
+    <button onclick="showLetter('excited')">if you feel excited</button>
+    <button onclick="showLetter('sleepy')">if you feel sleepy</button>
+    <button onclick="showLetter('thoughtful')">if you are thoughtful</button>
+    <button onclick="showLetter('romantic')">if you feel romantic</button>
+    <button onclick="showLetter('silly')">if you feel silly</button>
+    <button onclick="showLetter('soft')">if you want something soft</button>
+    <button onclick="showLetter('kiss')">if you want a kiss</button>
 
     <div id="letterBox"></div>
+</section>
+
 </div>
 
 <script>
@@ -90,9 +173,26 @@ function showLetter(type) {
     var box = document.getElementById("letterBox");
 
     var letters = {
-        sad: "i know there are days when your heart feels heavier than it should and i wish i could hold you and remind you that even on your lowest days you are deeply loved by me and nothing will ever change that",
-        happy: "when you are happy the world feels brighter and your smile becomes my favorite sight and i fall in love with you all over again every single time",
-        hug: "come here in your mind and let me wrap my arms around you and hold you close and remind you that you are safe wanted cherished completely"
+        sad: "i know there are days when your heart feels heavier than it should and i wish i could hold you and remind you that even on your lowest days you are deeply loved by me and nothing will ever change that and i hope you feel my presence with you even from afar and i want you to remember that your feelings are always safe with me and i am always thinking about you loving you endlessly even when the world feels too heavy and overwhelming and i wish i could be there to hold you and whisper softly in your ear that you are my everything my heart my soul and nothing will ever separate us and your sadness will fade and i will be by your side through every tear every sigh every heavy moment and you are cherished more than words could ever capture and every beat of my heart beats for you alone and when you feel alone think of our first kiss under the night sky and how infinite that moment felt and i carry that magic in me always and even now i wish i could take your hand and let you know that the world may be hard but we are stronger together and i love you beyond measure beyond time beyond everything and you are my forever my softest angel and my love will never end even when the clouds seem dark",
+        happy: "when you are happy the world feels brighter and your smile becomes my favorite sight and i fall in love with you all over again every single time and i remember every little laugh every soft glance every playful tease that makes my heart swell and i wish i could capture every moment and freeze it so i can always relive it and your joy is my favorite melody and it makes everything around me lighter and more beautiful and i want to spend every day making you feel that same glow that you give me naturally and your happiness is my mission my desire and my comfort and when you smile i feel like i am home and nothing else matters and i love the way your eyes shine when you are truly delighted and how your laughter fills the space and even the smallest happy moments with you are treasures i keep in my heart forever and i promise to always do my best to see that smile and to remind you how much you mean to me and you are my everything and i am yours always and nothing will ever change that and your joy is my sunlight and i will chase it with you for the rest of our days",
+        hug: "come here in your mind and let me wrap my arms around you and hold you close and remind you that you are safe wanted cherished completely and even when i cannot be physically there i want you to feel me in your heart in every hug you need in every moment you wish for warmth and love and i will be that for you through every sigh every shiver every lonely feeling and you are my most precious treasure and i want to cradle you softly like the night cradles the stars and the world may feel harsh but in my arms there is only softness only care and endless love and i wish i could stay like that forever letting you rest in my love in my devotion in my protection and you are mine as much as i am yours and together we are infinite and every embrace i imagine is a promise to always be here for you through everything",
+        missing: "everytime we are apart my heart longs for you and i wish i could be right there next to you feeling your warmth and your gentle breaths and seeing your smile and hearing your laughs and even though distance separates us for a moment my love for you grows stronger and i think about all the memories we share the first kiss the promise ring i got you for our anniversary the nights we laughed wevw cried together held eachother together and i hold our these memories as if they were a soft blanket wrapping me in your love and i imagine holding your hand and feeling your heartbeat next to mine and it fills me with comfort and joy and i hope you feel me thinking of you and even when we are apart you are never far from my heart and every star reminds me of your eyes and every breeze whispers your name and i love you endlessly and i miss you more then words could ever say and i cant wait to be with you again to hold you to love you to never let go and until that moment comes i carry you in every thought every dream every breath and my love never sleeps and neither does my longing to be with you i yearn for you my love tanishu",
+        angry: "even when anger flares in your heart and frustration takes over i want you to know that i understand and i am here and i love you even when you feel stormy or restless and your emotions are valid and every feeling you have is precious to me and even in moments when we clash or when the world feels unfair i will stand by you and not let a single harsh moment make you feel unloved or uncherished and i promise to listen and to calm your fears and to remind you that nothing you feel could ever diminish my love for you and when you need space i will give it when you need warmth i will give it and i will never judge the storm within you for it is part of your beauty part of your humanity part of the soul i adore endlessly and i want you to always remember that i am your safe harbor your calm your unwavering love and even in anger i see the heart i fell in love with and it shines brighter than any moment of tension or misunderstanding and we will navigate every storm together and come out stronger on the other side",
+        dramatic: "your soul is so expressive so vast and colorful and i love how you feel everything so deeply and how every moment becomes larger than life when you are in it and your gestures your laughter your tears your playful glances every little dramatic moment makes me fall in love with you over and over and i cherish your intensity and your passion and your wild heart and i never want you to change for anything in the world for it is that drama that makes you uniquely you and i will celebrate every peak every high every emotion that sweeps over you and i want to be the one who holds you through it all and laughs with you and cries with you and loves you in every storm and every sparkle and when the world seems dull and gray i will be there to remind you of your brilliance and how much your soul lights up my world and every dramatic sigh every soft pout every playful eye roll is a piece of magic i will treasure forever and i want to always witness your heart in full bloom and never miss a single part of your radiant being",
+        overthinking: "i know your mind never stops it races it twists it turns and worries swirl endlessly and sometimes it keeps you awake at night and i want you to know i am here always ready to listen to your thoughts to untangle them with you to remind you that not every fear is real not every worry is true and i love you even when your mind overwhelms you even when it keeps spinning and you doubt yourself or us and i will be the calm in your storm the quiet that anchors you and the voice that whispers softly that you are safe and you are loved and nothing can shake the bond we share and i will never grow tired of your questions your thoughts your endless curiosity and your tender heart and together we will navigate every what if every doubt every fear and i will never stop loving you because of it but because of it and i will stay by your side every step of the way holding your hand and breathing with you until the storm inside your mind finds peace and you feel light again",
+        clingy: "i love how you want me close how you crave attention how your little clings and soft touches make my heart explode with warmth and how every time you reach for me it feels like home and i promise to never take that for granted and to always be near when you need me and to cherish the affection you give so freely and i want to hold you all day and all night and remind you that you are mine as much as i am yours and your clinginess is not a burden but a treasure and i love how your heart is so open and eager and how our souls intertwine with every hug every soft word every gentle squeeze and i will be your safe place your comfort your love your everything and every little moment when you hold my hand or lean into me is a memory i will carry forever and i want to be your arms your shelter your safe harbor through every storm and every calm",
+        calm: "your calm is a balm to my soul and your quiet presence is like a gentle breeze on a summer day and when i am with you i feel grounded and safe and even when the world is chaotic your serenity wraps around me and i want to always protect that softness and your stillness teaches me patience and peace and i love the way you breathe slowly and think deeply and how your calmness is a reflection of your inner strength and i promise to never disturb your peace unnecessarily and to be the steady hand that complements your soft grace and together our hearts beat in quiet harmony and i love you for every gentle sigh every soft smile every tender glance that radiates tranquility and i want to spend my life learning from your quiet wisdom and carrying your gentle love everywhere we go and your calm makes every day lighter and every night softer and i will treasure it forever",
+        teasing: "i love how you tease me how your playful glances your soft laughs your tiny jokes make my heart skip and how every little tease is a spark that ignites joy and i cherish every time you push my buttons softly and laugh at my reactions and i want to tease you back and make you giggle and hold you close in our playful battles and our lighthearted games and every mischievous smile you give me is a treasure i keep and every teasing word is a reminder of how connected we are and i love that our love has laughter at its core and joy in every corner and i will always match your energy with affection with fun and with endless love and when we tease each other our hearts speak in secret languages that no one else understands and i want to spend forever teasing you and being teased by you and laughing together until our cheeks hurt and our souls glow from the happiness of being perfectly us",
+        insecure: "even when you feel small or unsure or doubt yourself i see only beauty and strength and brilliance and i want you to always remember that every part of you is loved beyond measure and your insecurities do not define you they only highlight the depth of your heart and your sensitivity and i will always remind you of your worth and how much you mean to me and the world is lucky to have you and i am lucky to love you and to hold your heart in my hands and i will never stop telling you how incredible you are and how safe you are with me and that you are enough more than enough and you always will be and every time you question yourself i will whisper softly that you are my everything and that i love every part of you even the parts you hide and together we will face every fear and i will never leave your side and your heart is precious and my devotion to you is endless and nothing you feel could ever make me love you less",
+        jealous: "when jealousy creeps in i want you to know i understand i see it and i love you even through that green haze and i want to hold your hand and remind you that you are mine and only mine and that nothing could ever take the place you have in my heart and your feelings are valid and i will never judge you for them and i love that you care that you feel deeply that you love intensely and i will always reassure you with my words with my actions with my heart and i will show you endlessly that you are my world my softest angel my forever and even when doubt tries to whisper i will be the loud voice reminding you that you are cherished and adored and that i am yours fully and completely and jealousy will fade because love stronger than fear surrounds us and together we are unshakable and nothing can come between us",
+        proud: "i am proud of you endlessly and not just for the big things but for every little effort every kind word every soft gesture that makes you the person i adore so much and i want you to know that your heart your mind your soul shine brighter than anything i have ever seen and i am grateful for you every day and proud to love you and proud to be loved by you and when you feel small or doubt your worth i want you to remember that you are extraordinary in ways that no one else can ever measure and i celebrate every step you take every choice you make every moment you show your brilliance and i love you for it all and being with you fills me with pride and joy and nothing compares to seeing your light glow in this world and you are my masterpiece my angel my love and i will never stop admiring you",
+        excited: "every time i think about us i feel a rush of excitement like butterflies dancing endlessly in my stomach and i want to run to you and tell you everything and feel your laughter echo and your hands in mine and the thrill of our love is something i will never tire of and even the smallest moments with you fill me with joy and anticipation for all the adventures we have yet to take and your presence electrifies me and makes the world feel brighter and i want to share every sunrise every sunset every quiet moment and every wild adventure with you and to feel the spark of our love in every heartbeat and every glance and every word we speak and i am endlessly excited to see your smile to hear your voice to be with you in every possible way and nothing in this world compares to the joy i feel because of you",
+        sleepy: "when your eyes grow heavy and your body craves rest i want you to feel safe in my love like a soft blanket wrapping around you and i hope you know that i am there even if only in thought to lull you gently into dreams of us and our love and i want to hold you close and breathe slowly together and imagine our hearts beating in quiet harmony and every soft sigh every gentle stretch every moment of rest is a reminder that you are my softest angel and i will always protect your peace and your sleep and when you wake i will be here to greet you with love and warmth and remind you that you are cherished and safe and my devotion is constant and unending and sleep peacefully my love and know that i am with you in every dream and every quiet moment and your rest is precious and i will always guard it with all my heart",
+        thoughtful: "i love you endlessly and completely and every beat of my heart belongs to you and i want you to feel that love in every word i whisper in every thought i send to you and in every action i take and i cherish every moment we share and even the smallest glances the softest touches the quietest smiles make me fall deeper in love with you and you are my heart my soul my forever and i want to spend all my days reminding you of how precious you are to me and how much joy you bring into my life and i promise to love you through every season every storm every quiet evening and every bright morning and nothing in this world could ever make me love you less and my love for you grows with every breath and every heartbeat and i want to hold you close and never let go and you are my everything my softest angel and my reason for all that is good in me",
+        romantic: "i am endlessly enchanted by you and our love and the little things that make it ours the soft whispers the stolen glances the gentle touches the promises we make with our hearts and i want to always create moments of beauty for you and with you and to fill your life with romance and affection and passion and tenderness and i want to walk under stars with you and feel the night wrap around us and hold your hand and feel your heart beat with mine and every kiss every soft word every look is a reminder that our love is eternal and that i am yours completely and nothing will ever dim the light i feel when i am with you and i want to spend all my life making you feel adored and treasured and cherished in every possible way",
+        silly: "i love your playful side the way you make me laugh the little jokes the funny faces the tiny pranks the giggles that escape you when you think no one is looking and i want to always share in that laughter and join you in the silliness and feel the joy of our hearts dancing together and even when life is serious and the world feels heavy your silliness is a gift and i cherish it and you and i want to always laugh with you cry with you play with you and feel every moment of life more fully because you are in it and your playful spirit reminds me that love is fun and light and endless and i will always adore the way you bring happiness into our days and make every moment feel like magic",
+        soft: "you are my softest angel and i love every gentle thing about you every whisper every sigh every soft touch every quiet glance and i want you to always feel safe with me and loved beyond measure and even when the world is loud or harsh i promise to be your calm your comfort your soft place to land and i will cherish your tenderness and protect it with all my heart and your soft heart your gentle ways your loving soul are the most precious gifts i have ever known and i will hold you close in thought and in reality and remind you endlessly that you are my everything my forever my softest love and every day i spend with you is a blessing and i will never take a single moment of your softness for granted and i am endlessly devoted to you",
+        kiss: "mhm you want a kiss pretty baby? or do you wanna be throwen around and fucked till you can walk anymoe mhm imaging yourself down on your knees grabbing my throbbing cock and putting it in your sweet lil mouth teasing me with your tongue mhm is my baby getting wet i wanna see and send me it saying your horny and ill tell you all what im gonna do to you tell you how im gonna eat your pussy how im gonna fuck you and take all my frustrations out on you and fuck your tight sweet lil pussy "
     };
 
     if(letters[type]){
